@@ -36,6 +36,7 @@ android {
 
     buildFeatures {
         buildConfig = true
+        dataBinding = true
     }
 }
 
@@ -43,6 +44,8 @@ dependencies {
     // AndroidX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
     // Google
     implementation(libs.material)

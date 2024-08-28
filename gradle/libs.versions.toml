@@ -10,6 +10,8 @@ kotlin = "1.9.22"
 # AndroidX
 appcompat = "1.7.0"
 core-ktx = "1.13.1"
+activityKtx = "1.9.1"
+fragmentKtx = "1.8.2"
 
 # Google
 material = "1.12.0"
@@ -23,6 +25,8 @@ espresso-core = "3.6.1"
 # AndroidX
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 
 # Google
 material = { module = "com.google.android.material:material", version.ref = "material" }
