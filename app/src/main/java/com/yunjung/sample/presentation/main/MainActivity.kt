@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.ActivityMainBinding
 import com.yunjung.sample.navigation.Navigation
+import com.yunjung.sample.util.extension.setStatusBarTransparent
 
 class MainActivity: FragmentActivity() {
     val viewModel: MainViewModel by viewModels()
@@ -18,6 +19,9 @@ class MainActivity: FragmentActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
+
+        // StatusBar 제거
+        setStatusBarTransparent(binding.container)
 
         // Navigation 설정
         Navigation.setNavigation(this)
