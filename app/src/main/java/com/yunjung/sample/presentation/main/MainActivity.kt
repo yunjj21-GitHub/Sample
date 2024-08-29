@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.ActivityMainBinding
+import com.yunjung.sample.navigation.Navigation
 
 class MainActivity: FragmentActivity() {
     val viewModel: MainViewModel by viewModels()
@@ -17,5 +18,8 @@ class MainActivity: FragmentActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
+
+        // Navigation 설정
+        Navigation.setNavigation(this)
     }
 }
