@@ -9,6 +9,7 @@ import androidx.navigation.fragment.fragment
 import com.yunjung.sample.R
 import com.yunjung.sample.presentation.login.LoginFragment
 import com.yunjung.sample.presentation.splash.SplashFragment
+import com.yunjung.sample.util.Logger
 
 object Navigation {
     private lateinit var activity: FragmentActivity
@@ -46,6 +47,8 @@ object Navigation {
     fun navigate(navDest: String){
         navController.navigate(navDest)
     }
+
+    fun getLastFragment() = navHostFragment.childFragmentManager.fragments.get(0)
 }
 
 object NavDest{
