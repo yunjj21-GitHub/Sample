@@ -66,4 +66,5 @@ dependencies {
 
     // Login
     implementation(libs.oauth.jdk8)
+    implementation(libs.v2.user)
 }

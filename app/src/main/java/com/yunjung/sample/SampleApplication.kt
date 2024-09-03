@@ -1,7 +1,9 @@
 package com.yunjung.sample
 
 import android.app.Application
+import com.kakao.sdk.common.KakaoSdk
 import com.navercorp.nid.NaverIdLoginSDK
+import com.yunjung.sample.constanct.Kakao
 import com.yunjung.sample.constanct.Naver
 import com.yunjung.sample.presentation.login.manager.NaverLoginManager
 
@@ -23,5 +25,7 @@ class SampleApplication: Application() {
             Naver.OAUTH_CLIENT_SECRET,
             Naver.OAUTH_CLIENT_NAME
         )
+
+        KakaoSdk.init(this, Kakao.NATIVE_APP_KEY)
     }
 }

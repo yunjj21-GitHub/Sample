@@ -180,13 +180,14 @@
             android:layout_height="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_marginStart="8dp"
             android:background="@drawable/ic_login_naver"
-            app:layout_constraintBottom_toBottomOf="@+id/googleLoginBtn"
-            app:layout_constraintEnd_toStartOf="@+id/googleLoginBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/kakaoLoginBtn"
+            app:layout_constraintEnd_toStartOf="@+id/kakaoLoginBtn"
             app:layout_constraintStart_toStartOf="@+id/divider2"
-            app:layout_constraintTop_toTopOf="@+id/googleLoginBtn" />
+            app:layout_constraintTop_toTopOf="@+id/kakaoLoginBtn" />
 
         <Button
-            android:id="@+id/googleLoginBtn"
+            android:id="@+id/kakaoLoginBtn"
+            android:background="@drawable/ic_login_kakao"
             android:layout_width="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_height="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_marginTop="24dp"
@@ -195,13 +196,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
-            android:id="@+id/KakaoLoginBtn"
+            android:id="@+id/googleLoginBtn"
             android:layout_width="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_height="@dimen/SIMPLE_LOGIN_BTN_SIZE"
-            app:layout_constraintBottom_toBottomOf="@+id/googleLoginBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/kakaoLoginBtn"
             app:layout_constraintEnd_toEndOf="@+id/divider3"
-            app:layout_constraintStart_toEndOf="@+id/googleLoginBtn"
-            app:layout_constraintTop_toTopOf="@+id/googleLoginBtn" />
+            app:layout_constraintStart_toEndOf="@+id/kakaoLoginBtn"
+            app:layout_constraintTop_toTopOf="@+id/kakaoLoginBtn" />
 
         <Button
             android:id="@+id/pwVisibilityBtn"

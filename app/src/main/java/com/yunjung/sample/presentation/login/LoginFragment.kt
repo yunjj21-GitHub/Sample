@@ -5,10 +5,16 @@ import android.text.InputType
 import android.view.MotionEvent
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.user.UserApiClient
 import com.yunjung.sample.R
 import com.yunjung.sample.base.BaseFragment
 import com.yunjung.sample.databinding.FragmentLoginBinding
+import com.yunjung.sample.presentation.login.manager.KakaoLoginManager
 import com.yunjung.sample.presentation.login.manager.NaverLoginManager
+import com.yunjung.sample.util.Logger
 import com.yunjung.sample.util.extension.showToast
 
 class LoginFragment: BaseFragment<FragmentLoginBinding>(
@@ -16,6 +22,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(
 ) {
     override val viewModel: LoginViewModel by viewModels()
     private lateinit var naverLoginManager: NaverLoginManager
+    private lateinit var kakaoLoginManager: KakaoLoginManager
 
     @SuppressLint("ClickableViewAccessibility")
     override fun initView() {
@@ -30,7 +37,14 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(
         // 네이버 로그인 버튼 설정
         naverLoginManager = NaverLoginManager(context)
         naverLoginManager.setLoginBtn(binding.naverLoginBtn)
-        naverLoginManager.setLoginSuccessListener {user ->
+        naverLoginManager.setLoginSuccessListener { user ->
+            activity.showToast(user.toString())
+        }
+
+        // 카카오 로그인 버튼 설정
+        kakaoLoginManager = KakaoLoginManager(context)
+        kakaoLoginManager.setLoginBtn(binding.kakaoLoginBtn)
+        kakaoLoginManager.setLoginSuccessListener { user ->
             activity.showToast(user.toString())
         }
     }
