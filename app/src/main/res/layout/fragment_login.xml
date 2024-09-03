@@ -174,11 +174,12 @@
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/textView3" />
 
-        <Button
+        <com.navercorp.nid.oauth.view.NidOAuthLoginButton
             android:id="@+id/naverLoginBtn"
             android:layout_width="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_height="@dimen/SIMPLE_LOGIN_BTN_SIZE"
             android:layout_marginStart="8dp"
+            android:background="@drawable/ic_login_naver"
             app:layout_constraintBottom_toBottomOf="@+id/googleLoginBtn"
             app:layout_constraintEnd_toStartOf="@+id/googleLoginBtn"
             app:layout_constraintStart_toStartOf="@+id/divider2"

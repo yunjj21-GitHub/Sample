@@ -25,8 +25,11 @@ espresso-core = "3.6.1"
 # UI
 lottie = "6.5.0"
 
-#Coroutine
+# Coroutine
 kotlinxCoroutinesAndroid = "1.7.3"
+
+# Login
+oauthJdk8 = "5.10.0"
 
 [libraries]
 # AndroidX
@@ -51,6 +54,9 @@ lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 
 # Coroutine
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+
+# Login
+oauth-jdk8 = { module = "com.navercorp.nid:oauth-jdk8", version.ref = "oauthJdk8" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

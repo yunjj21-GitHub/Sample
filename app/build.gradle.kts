@@ -63,4 +63,7 @@ dependencies {
 
     // Coroutine
     implementation(libs.kotlinx.coroutines.android)
+
+    // Login
+    implementation(libs.oauth.jdk8)
 }
