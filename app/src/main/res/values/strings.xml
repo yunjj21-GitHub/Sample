@@ -3,4 +3,15 @@
 
     <!-- BackButton -->
     <string name="back_button_pressed_message">\'뒤로\'버튼을 한번 더 누르면 종료됩니다.</string>
+
+    <!-- Login -->
+    <string name="login_title">로그인</string>
+    <string name="login_email">이메일을 입력하세요</string>
+    <string name="login_pw">비밀번호를 입력하세요</string>
+    <string name="login_auto_login">로그인 유지</string>
+    <string name="login_forgot_pw">비밀번호 찾기</string>
+    <string name="login_login_using_email">이메일로 로그인</string>
+    <string name="login_sign_up">회원가입</string>
+    <string name="login_forgot_email">이메일 찾기</string>
+    <string name="login_simple_login">간편로그인</string>
 </resources>
