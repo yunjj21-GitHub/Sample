@@ -111,7 +111,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView" />
 
         <Button
-            android:id="@+id/usingEmailLoginBtn"
+            android:id="@+id/emailLoginBtn"
             android:stateListAnimator="@null"
             style="@style/TXT_CONTENT_WHITE_BOLD"
             android:layout_width="0dp"
@@ -130,9 +130,9 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/gray9E"
             android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="@+id/usingEmailLoginBtn"
-            app:layout_constraintStart_toStartOf="@+id/usingEmailLoginBtn"
-            app:layout_constraintTop_toBottomOf="@+id/usingEmailLoginBtn" />
+            app:layout_constraintEnd_toEndOf="@+id/emailLoginBtn"
+            app:layout_constraintStart_toStartOf="@+id/emailLoginBtn"
+            app:layout_constraintTop_toBottomOf="@+id/emailLoginBtn" />
 
         <Button
             android:id="@+id/button3"
@@ -184,7 +184,7 @@
             android:backgroundTint="@color/gray9E"
             app:layout_constraintBottom_toBottomOf="@+id/textView3"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintStart_toStartOf="@+id/usingEmailLoginBtn"
+            app:layout_constraintStart_toStartOf="@+id/emailLoginBtn"
             app:layout_constraintTop_toTopOf="@+id/textView3" />
 
         <View
@@ -195,7 +195,7 @@
             android:background="?android:attr/listDivider"
             android:backgroundTint="@color/gray9E"
             app:layout_constraintBottom_toBottomOf="@+id/textView3"
-            app:layout_constraintEnd_toEndOf="@+id/usingEmailLoginBtn"
+            app:layout_constraintEnd_toEndOf="@+id/emailLoginBtn"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/textView3" />
 

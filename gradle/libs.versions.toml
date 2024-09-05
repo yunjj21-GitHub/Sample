@@ -10,13 +10,17 @@ coreKtx = "1.13.1"
 activityKtx = "1.9.1"
 fragmentKtx = "1.8.2"
 navigationCompose = "2.7.7"
+
+# Login
+oauthJdk8 = "5.10.0"
+v2User = "2.20.5"
+googleid = "1.1.1"
 credentialsPlayServicesAuth = "1.5.0-alpha04"
 credentials = "1.5.0-alpha04"
 
 # Google
 material = "1.12.0"
 firebaseBom = "33.2.0"
-googleid = "1.1.1"
 
 # Test
 junit = "4.13.2"
@@ -29,10 +33,6 @@ lottie = "6.5.0"
 # Coroutine
 kotlinxCoroutinesAndroid = "1.7.3"
 
-# Login
-oauthJdk8 = "5.10.0"
-v2User = "2.20.5"
-
 [libraries]
 # AndroidX
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -42,6 +42,11 @@ androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationCompose" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationCompose" }
+
+# Login
+oauth-jdk8 = { module = "com.navercorp.nid:oauth-jdk8", version.ref = "oauthJdk8" }
+v2-user = { module = "com.kakao.sdk:v2-user", version.ref = "v2User" }
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentialsPlayServicesAuth" }
 androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
 
@@ -49,7 +54,6 @@ androidx-credentials = { module = "androidx.credentials:credentials", version.re
 material = { module = "com.google.android.material:material", version.ref = "material" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
-googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 
 # Test
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -61,10 +65,6 @@ lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 
 # Coroutine
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
-
-# Login
-oauth-jdk8 = { module = "com.navercorp.nid:oauth-jdk8", version.ref = "oauthJdk8" }
-v2-user = { module = "com.kakao.sdk:v2-user", version.ref = "v2User" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

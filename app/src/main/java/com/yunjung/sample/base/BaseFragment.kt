@@ -39,6 +39,16 @@ abstract class BaseFragment<B: ViewDataBinding>(
 
         initView()
         initObserver()
+
+        // Loading 이벤트 메인으로 전달
+        viewModel.appLoading.observe(viewLifecycleOwner) {
+            if(it) mainViewModel.showAppLoading()
+            else mainViewModel.hideAppLoading()
+        }
+        viewModel.webLoading.observe(viewLifecycleOwner) {
+            if(it) mainViewModel.showWebLoading()
+            else mainViewModel.hideWebLoading()
+        }
     }
 
     abstract fun initView()

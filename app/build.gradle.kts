@@ -50,6 +50,11 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // Login
+    implementation(libs.oauth.jdk8)
+    implementation(libs.v2.user)
+    implementation(libs.googleid)
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
 
@@ -57,7 +62,6 @@ dependencies {
     implementation(libs.material)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
-    implementation(libs.googleid)
 
     // Test
     testImplementation(libs.junit)
@@ -69,8 +73,4 @@ dependencies {
 
     // Coroutine
     implementation(libs.kotlinx.coroutines.android)
-
-    // Login
-    implementation(libs.oauth.jdk8)
-    implementation(libs.v2.user)
 }

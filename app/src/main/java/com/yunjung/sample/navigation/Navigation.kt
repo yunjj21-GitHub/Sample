@@ -7,6 +7,7 @@ import androidx.navigation.createGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.fragment
 import com.yunjung.sample.R
+import com.yunjung.sample.presentation.home.HomeFragment
 import com.yunjung.sample.presentation.login.LoginFragment
 import com.yunjung.sample.presentation.splash.SplashFragment
 import com.yunjung.sample.util.Logger
@@ -41,6 +42,9 @@ object Navigation {
             fragment<LoginFragment>(NavDest.login){
                 label = NavDest.login
             }
+            fragment<HomeFragment>(NavDest.home) {
+                label = NavDest.home
+            }
         }
     }
 
@@ -54,4 +58,5 @@ object Navigation {
 object NavDest{
     const val splash = "splash"
     const val login = "login"
+    const val home = "home"
 }

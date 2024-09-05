@@ -14,4 +14,7 @@
     <string name="login_sign_up">회원가입</string>
     <string name="login_forgot_email">이메일 찾기</string>
     <string name="login_simple_login">간편로그인</string>
+
+    <!-- Home -->
+    <string name="home_title">홈</string>
 </resources>
