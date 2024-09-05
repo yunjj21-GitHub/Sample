@@ -9,10 +9,17 @@ import com.kakao.sdk.user.UserApiClient
 import com.yunjung.sample.domain.model.User
 import com.yunjung.sample.util.Logger
 
-class KakaoLoginManager(private val context: Context?) {
+class KakaoLoginManager(
+    private val context: Context?,
+    loginBtn: Button
+) {
     private lateinit var loginSuccessListener: (User) -> Unit
 
-    fun setLoginBtn(loginBtn: Button){
+    init {
+        setLoginBtn(loginBtn)
+    }
+
+    private fun setLoginBtn(loginBtn: Button){
         loginBtn.setOnClickListener {
             loginWithKaKao()
         }

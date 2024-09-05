@@ -1,26 +1,27 @@
-# 아래의 링크들을 참고하여 작성함
-# https://proandroiddev.com/migrating-to-version-catalog-ce737cb94233
-# https://github.com/android/nowinandroid/blob/main/gradle/libs.versions.toml
-
 [versions]
 #Plugin
 androidGradlePlugin = "8.2.2"
 kotlin = "1.9.22"
+gmsPlugin = "4.4.2"
 
 # AndroidX
 appcompat = "1.7.0"
-core-ktx = "1.13.1"
+coreKtx = "1.13.1"
 activityKtx = "1.9.1"
 fragmentKtx = "1.8.2"
 navigationCompose = "2.7.7"
+credentialsPlayServicesAuth = "1.5.0-alpha04"
+credentials = "1.5.0-alpha04"
 
 # Google
 material = "1.12.0"
+firebaseBom = "33.2.0"
+googleid = "1.1.1"
 
 # Test
 junit = "4.13.2"
-androidx-junit = "1.2.1"
-espresso-core = "3.6.1"
+androidxJunit = "1.2.1"
+espressoCore = "3.6.1"
 
 # UI
 lottie = "6.5.0"
@@ -35,20 +36,25 @@ v2User = "2.20.5"
 [libraries]
 # AndroidX
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationCompose" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationCompose" }
+androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentialsPlayServicesAuth" }
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
 
 # Google
 material = { module = "com.google.android.material:material", version.ref = "material" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 
 # Test
 junit = { module = "junit:junit", version.ref = "junit" }
-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
-androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 
 # UI
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
@@ -63,3 +69,4 @@ v2-user = { module = "com.kakao.sdk:v2-user", version.ref = "v2User" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }

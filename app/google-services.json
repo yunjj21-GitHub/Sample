@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "816357610491",
+    "project_id": "sample-22a3d",
+    "storage_bucket": "sample-22a3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816357610491:android:20564fd457875afcebb15e",
+        "android_client_info": {
+          "package_name": "com.yunjung.sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8GuThsiqv62_BTDi-Wr_wYfYff_3oYeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

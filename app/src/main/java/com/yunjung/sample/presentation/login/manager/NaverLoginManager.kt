@@ -15,7 +15,10 @@ import com.yunjung.sample.util.Logger
 
 // Naver Developers: https://developers.naver.com/docs/login/android/android.md
 // 테스트 계정 등록: Application > 내 애플리케이션 > 멤버관리
-class NaverLoginManager(private val context: Context?) {
+class NaverLoginManager(
+    private val context: Context?,
+    loginBtn: NidOAuthLoginButton
+) {
     private lateinit var loginSuccessListener: (User) -> Unit
     private lateinit var oauthLoginCallback: OAuthLoginCallback
     private lateinit var nidProfileCallback: NidProfileCallback<NidProfileResponse>
@@ -25,9 +28,10 @@ class NaverLoginManager(private val context: Context?) {
         initOAuthLoginCallback()
         initNidProfileCallback()
         initDeleteTokenCallback()
+        setLoginBtn(loginBtn)
     }
 
-    fun setLoginBtn(loginBtn: NidOAuthLoginButton){
+    private fun setLoginBtn(loginBtn: NidOAuthLoginButton){
         loginBtn.setOAuthLogin(oauthLoginCallback)
         // Naver Login Button 기본 이미지 제거
         context?.let {
