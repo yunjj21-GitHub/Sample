@@ -26,12 +26,17 @@ https://github.com/android/nowinandroid/blob/main/gradle/libs.versions.toml
 
 ● Transparent StatusBar
 https://gogigood.tistory.com/20
+https://medium.com/javarevisited/how-to-get-status-bar-height-in-android-programmatically-c127ad4f8a5d
 
 ● Navigation Component
 https://developer.android.com/guide/navigation/design/kotlin-dsl?hl=ko
 
 ● Fragment Animation
 https://wikidocs.net/19567
+
+● Custom AppBar
+https://stackoverflow.com/questions/10713312/can-i-have-onscrolllistener-for-a-scrollview
+https://stackoverflow.com/questions/18765979/get-y-coordinate-of-top-and-bottom-of-imageview
 
 
 

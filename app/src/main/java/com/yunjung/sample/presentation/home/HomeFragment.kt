@@ -32,5 +32,8 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
             delay(1500)
             viewModel.hideAppLoading()
         }
+
+        // AppBar 에 ScrollView 부착
+        activity.smplAppBar.setScrollView(binding.scrollView)
     }
 }

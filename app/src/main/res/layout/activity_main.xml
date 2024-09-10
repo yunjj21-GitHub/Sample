@@ -25,7 +25,15 @@
 
         </FrameLayout>
 
-        <com.yunjung.sample.util.view.Loading
+        <com.yunjung.sample.util.view.SmplAppBar
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.yunjung.sample.util.view.LoadingView
             android:id="@+id/loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

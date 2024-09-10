@@ -22,6 +22,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity: FragmentActivity() {
     val viewModel: MainViewModel by viewModels()
+    lateinit var smplAppBar: SmplAppBar
     lateinit var navigation: Navigation
 
     private lateinit var binding: ActivityMainBinding
@@ -35,8 +36,22 @@ class MainActivity: FragmentActivity() {
         // StatusBar 제거
         setStatusBarTransparent(binding.container)
 
+        // AppBar 초기화
+        smplAppBar = binding.appBar
+
         // Navigation 설정
         navigation = Navigation(this)
+        navigation.setDestinationChangedListener { _, dest, _ ->
+            SmplLogger.d("navigate to ${dest.label}")
+            when(dest.label) {
+                NavDest.splash, NavDest.login -> {
+                    smplAppBar.hide()
+                }
+                NavDest.home -> {
+                    smplAppBar.show()
+                }
+            }
+        }
 
         // BackButton 동작 설정
         setBackButton()
