@@ -1,8 +1,10 @@
 package com.yunjung.sample.navigation
 
-import android.annotation.SuppressLint
+import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.createGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.fragment
@@ -10,26 +12,17 @@ import com.yunjung.sample.R
 import com.yunjung.sample.presentation.home.HomeFragment
 import com.yunjung.sample.presentation.login.LoginFragment
 import com.yunjung.sample.presentation.splash.SplashFragment
-import com.yunjung.sample.util.Logger
 
-object Navigation {
-    private lateinit var activity: FragmentActivity
-    private lateinit var navHostFragment: NavHostFragment
-    private lateinit var navController: NavController
+class Navigation(activity: FragmentActivity) {
+    private var activity: FragmentActivity
+    private var navHostFragment: NavHostFragment
+    private var navController: NavController
 
-    fun setNavigation(activity: FragmentActivity){
+    init {
         this.activity = activity
-        initNavHostFragment()
-        initNavController()
-        initNavGraph()
-    }
-
-    private fun initNavHostFragment(){
         navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
-    }
-
-    private fun initNavController(){
         navController = navHostFragment.navController
+        initNavGraph()
     }
 
     private fun initNavGraph(){
@@ -52,7 +45,13 @@ object Navigation {
         navController.navigate(navDest)
     }
 
-    fun getLastFragment() = navHostFragment.childFragmentManager.fragments.get(0)
+    fun getLastFragment(): Fragment = navHostFragment.childFragmentManager.fragments[0]
+
+    fun setDestinationChangedListener(
+        callback: (controller: NavController, dest: NavDestination, args: Bundle?) -> Unit
+    ){
+        navController.addOnDestinationChangedListener(callback)
+    }
 }
 
 object NavDest{

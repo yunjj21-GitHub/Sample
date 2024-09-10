@@ -14,7 +14,7 @@ import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.yunjung.sample.constanct.Google
 import com.yunjung.sample.domain.model.User
-import com.yunjung.sample.util.Logger
+import com.yunjung.sample.util.SmplLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -77,7 +77,7 @@ class GoogleLoginManager(
                 }
                 handleSignIn(credentialResponse)
             }catch (e: GetCredentialException) {
-                Logger.e("Google Login Error -> $e")
+                SmplLogger.e("Google Login Error -> $e")
             }
         }
     }
@@ -89,14 +89,14 @@ class GoogleLoginManager(
             is PublicKeyCredential -> {
                 // TODO: 결과값 확인 후 후속 처리 구현 필요함
                 val response = credential.authenticationResponseJson
-                Logger.d("Google Login (PublicKeyCredential) -> $response")
+                SmplLogger.d("Google Login (PublicKeyCredential) -> $response")
             }
             is PasswordCredential -> {
                 // TODO: 결과값 확인 후 후속 처리 구현 필요함
                 val userName = credential.id
                 val pw = credential.password
                 val data = credential.data
-                Logger.d("Google Login (PasswordCredential) -> $userName, $pw, $data")
+                SmplLogger.d("Google Login (PasswordCredential) -> $userName, $pw, $data")
             }
             is CustomCredential -> {
                 if (credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
@@ -109,13 +109,13 @@ class GoogleLoginManager(
                         phoneNumber = googleIdTokenCredential.phoneNumber
                     )
                     loginSuccessListener(user)
-                    Logger.d("Google Login (CustomCredential) -> $user")
+                    SmplLogger.d("Google Login (CustomCredential) -> $user")
                 }else {
-                    Logger.d("Google Login (CustomCredential) -> Unexpected type of credential")
+                    SmplLogger.d("Google Login (CustomCredential) -> Unexpected type of credential")
                 }
             }
             else -> {
-                Logger.d("Google Login -> Unexpected type of credential")
+                SmplLogger.d("Google Login -> Unexpected type of credential")
             }
         }
     }

@@ -1,9 +1,7 @@
 package com.yunjung.sample.presentation.login.manager
 
 import android.content.Context
-import android.util.Log
 import androidx.core.content.ContextCompat
-import com.navercorp.nid.NaverIdLoginSDK
 import com.navercorp.nid.oauth.NidOAuthLogin
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import com.navercorp.nid.oauth.view.NidOAuthLoginButton
@@ -11,7 +9,7 @@ import com.navercorp.nid.profile.NidProfileCallback
 import com.navercorp.nid.profile.data.NidProfileResponse
 import com.yunjung.sample.R
 import com.yunjung.sample.domain.model.User
-import com.yunjung.sample.util.Logger
+import com.yunjung.sample.util.SmplLogger
 
 // Naver Developers: https://developers.naver.com/docs/login/android/android.md
 // 테스트 계정 등록: Application > 내 애플리케이션 > 멤버관리
@@ -42,11 +40,11 @@ class NaverLoginManager(
     private fun initOAuthLoginCallback(){
         oauthLoginCallback = object : OAuthLoginCallback {
             override fun onError(errorCode: Int, message: String) {
-                Logger.d("OAuthLoginCallback onError -> $errorCode, $message")
+                SmplLogger.d("OAuthLoginCallback onError -> $errorCode, $message")
             }
 
             override fun onFailure(httpStatus: Int, message: String) {
-                Logger.d("OAuthLoginCallback onFailure -> $httpStatus, $message")
+                SmplLogger.d("OAuthLoginCallback onFailure -> $httpStatus, $message")
             }
 
             override fun onSuccess() {
@@ -58,11 +56,11 @@ class NaverLoginManager(
     private fun initNidProfileCallback(){
         nidProfileCallback = object : NidProfileCallback<NidProfileResponse> {
             override fun onError(errorCode: Int, message: String) {
-                Logger.d("NidProfileCallback onError -> $errorCode, $message")
+                SmplLogger.d("NidProfileCallback onError -> $errorCode, $message")
             }
 
             override fun onFailure(httpStatus: Int, message: String) {
-                Logger.d("NidProfileCallback onFailure -> $httpStatus, $message")
+                SmplLogger.d("NidProfileCallback onFailure -> $httpStatus, $message")
             }
 
             override fun onSuccess(result: NidProfileResponse) {
@@ -74,15 +72,15 @@ class NaverLoginManager(
     private fun initDeleteTokenCallback(){
         deleteTokenCallback = object : OAuthLoginCallback {
             override fun onError(errorCode: Int, message: String) {
-                Logger.d("DeleteTokenCallback onError -> $errorCode, $message")
+                SmplLogger.d("DeleteTokenCallback onError -> $errorCode, $message")
             }
 
             override fun onFailure(httpStatus: Int, message: String) {
-                Logger.d("DeleteTokenCallback onFailure -> $httpStatus, $message")
+                SmplLogger.d("DeleteTokenCallback onFailure -> $httpStatus, $message")
             }
 
             override fun onSuccess() {
-                Logger.d("DeleteTokenCallback onSuccess")
+                SmplLogger.d("DeleteTokenCallback onSuccess")
             }
         }
     }

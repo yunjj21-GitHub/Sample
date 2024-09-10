@@ -9,12 +9,12 @@ import android.view.animation.AnimationUtils
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.LayoutLoadingBinding
-import com.yunjung.sample.util.Logger
+import com.yunjung.sample.util.SmplLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class Loading @JvmOverloads constructor(
+class LoadingView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -30,7 +30,7 @@ class Loading @JvmOverloads constructor(
             duration = 80
             setAnimationListener(object: Animation.AnimationListener {
                 override fun onAnimationStart(p0: Animation?) {
-                    Logger.d("loading show")
+                    SmplLogger.d("loadingView show")
                     binding.root.visibility = View.VISIBLE
                 }
                 override fun onAnimationEnd(p0: Animation?) { }
@@ -47,7 +47,7 @@ class Loading @JvmOverloads constructor(
             setAnimationListener(object: Animation.AnimationListener {
                 override fun onAnimationStart(p0: Animation?) { }
                 override fun onAnimationEnd(p0: Animation?) {
-                    Logger.d("loading hide")
+                    SmplLogger.d("loadingView hide")
                     binding.container.visibility = View.GONE
                 }
                 override fun onAnimationRepeat(p0: Animation?) { }

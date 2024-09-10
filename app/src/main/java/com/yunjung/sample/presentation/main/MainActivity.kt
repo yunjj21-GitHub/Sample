@@ -7,11 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.ActivityMainBinding
+import com.yunjung.sample.navigation.NavDest
 import com.yunjung.sample.navigation.Navigation
 import com.yunjung.sample.presentation.splash.SplashFragment
-import com.yunjung.sample.util.Logger
+import com.yunjung.sample.util.SmplLogger
 import com.yunjung.sample.util.extension.setStatusBarTransparent
 import com.yunjung.sample.util.extension.showToast
+import com.yunjung.sample.util.view.SmplAppBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -20,6 +22,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity: FragmentActivity() {
     val viewModel: MainViewModel by viewModels()
+    lateinit var navigation: Navigation
 
     private lateinit var binding: ActivityMainBinding
 
@@ -33,11 +36,12 @@ class MainActivity: FragmentActivity() {
         setStatusBarTransparent(binding.container)
 
         // Navigation 설정
-        Navigation.setNavigation(this)
+        navigation = Navigation(this)
 
         // BackButton 동작 설정
         setBackButton()
 
+        // LoadingView 부착
         initObserver()
     }
 
@@ -76,7 +80,7 @@ class MainActivity: FragmentActivity() {
     private fun setBackButton(){
         val backPressedDispatcher = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                val visibleFragment = Navigation.getLastFragment()
+                val visibleFragment = navigation.getLastFragment()
                 if(visibleFragment is SplashFragment) return // Splash 백키 막음
                 // loading 노출 시 백키 막음
                 if(viewModel.appLoading.value == true || viewModel.webLoading.value == true) return

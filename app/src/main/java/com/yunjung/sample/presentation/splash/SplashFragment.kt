@@ -22,7 +22,7 @@ class SplashFragment: BaseFragment<FragmentSplashBinding>(
         super.onResume()
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
-            Navigation.navigate(NavDest.login)
+            activity.navigation.navigate(NavDest.login)
         }
     }
 

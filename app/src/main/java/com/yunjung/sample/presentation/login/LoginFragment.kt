@@ -52,21 +52,21 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(
 
         // 이메일 로그인 버튼 설정
         binding.emailLoginBtn.setOnClickListener {
-            Navigation.navigate(NavDest.home)
+            activity.navigation.navigate(NavDest.home)
         }
 
         // 네이버 로그인 버튼 설정
         naverLoginManager = NaverLoginManager(context, binding.naverLoginBtn)
         naverLoginManager.setLoginSuccessListener { user ->
             activity.showToast(user.toString())
-            Navigation.navigate(NavDest.home)
+            activity.navigation.navigate(NavDest.home)
         }
 
         // 카카오 로그인 버튼 설정
         kakaoLoginManager = KakaoLoginManager(context, binding.kakaoLoginBtn)
         kakaoLoginManager.setLoginSuccessListener { user ->
             activity.showToast(user.toString())
-            Navigation.navigate(NavDest.home)
+            activity.navigation.navigate(NavDest.home)
         }
 
         // 구글 로그인 버튼 설정
@@ -74,7 +74,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(
         googleLoginManager.setLoginSuccessListener { user ->
             CoroutineScope(Dispatchers.Main).launch {
                 activity.showToast(user.toString())
-                Navigation.navigate(NavDest.home)
+                activity.navigation.navigate(NavDest.home)
             }
         }
 

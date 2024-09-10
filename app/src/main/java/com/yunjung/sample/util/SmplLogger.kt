@@ -4,8 +4,9 @@ import android.util.Log
 import java.util.Locale
 import com.yunjung.sample.BuildConfig
 
-object Logger {
-    const val TAG = "sample"
+object SmplLogger {
+    const val TAG = "SmplLogger"
+
     fun d(message: Any?) {
         if (BuildConfig.DEBUG) Log.d(TAG, convertMessage(convertToString(message)))
     }

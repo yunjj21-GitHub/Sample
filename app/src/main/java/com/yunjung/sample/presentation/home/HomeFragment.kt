@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import com.yunjung.sample.R
 import com.yunjung.sample.base.BaseFragment
 import com.yunjung.sample.databinding.FragmentHomeBinding
-import com.yunjung.sample.util.extension.showToast
+import com.yunjung.sample.util.SmplLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -25,9 +25,11 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // LoadingView 테스트
         CoroutineScope(Dispatchers.Main).launch {
             viewModel.showAppLoading()
-            delay(3000)
+            delay(1500)
             viewModel.hideAppLoading()
         }
     }
