@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.ActivityMainBinding
-import com.yunjung.sample.navigation.NavDest
 import com.yunjung.sample.navigation.Navigation
 import com.yunjung.sample.presentation.splash.SplashFragment
 import com.yunjung.sample.util.SmplLogger
@@ -38,19 +37,12 @@ class MainActivity: FragmentActivity() {
 
         // AppBar 초기화
         smplAppBar = binding.appBar
+        smplAppBar.hide()
 
         // Navigation 설정
         navigation = Navigation(this)
         navigation.setDestinationChangedListener { _, dest, _ ->
             SmplLogger.d("navigate to ${dest.label}")
-            when(dest.label) {
-                NavDest.splash, NavDest.login -> {
-                    smplAppBar.hide()
-                }
-                NavDest.home -> {
-                    smplAppBar.show()
-                }
-            }
         }
 
         // BackButton 동작 설정

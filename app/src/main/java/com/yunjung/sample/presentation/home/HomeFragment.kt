@@ -7,6 +7,7 @@ import com.yunjung.sample.R
 import com.yunjung.sample.base.BaseFragment
 import com.yunjung.sample.databinding.FragmentHomeBinding
 import com.yunjung.sample.util.SmplLogger
+import com.yunjung.sample.util.view.SmplAppBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -32,8 +33,15 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
             delay(1500)
             viewModel.hideAppLoading()
         }
+    }
 
-        // AppBar 에 ScrollView 부착
-        activity.smplAppBar.setScrollView(binding.scrollView)
+    override fun onResume() {
+        super.onResume()
+        activity.smplAppBar.show(binding.scrollView, binding.layout)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        activity.smplAppBar.hide()
     }
 }
