@@ -33,15 +33,12 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
             delay(1500)
             viewModel.hideAppLoading()
         }
-    }
 
-    override fun onResume() {
-        super.onResume()
         activity.smplAppBar.show(binding.scrollView, binding.layout)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        activity.smplAppBar.hide()
+        activity.smplAppBar.hide(binding.layout)
     }
 }

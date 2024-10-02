@@ -69,15 +69,19 @@ class SmplAppBar @JvmOverloads constructor(
             else isMainAppBarVisible(true)
         }
         chdAppBar.binding.container.visibility = View.VISIBLE
+
         chdAppBarLayout.addView(chdAppBar)
     }
 
     /*
     * SmplAppBar(MainAppBar, ChdAppBar 숨김 설정)
     * */
-    fun hide(){
+    fun hide(chdAppBarLayout: ConstraintLayout? = null){
         mainAppBar.binding.container.visibility = View.GONE
         chdAppBar.binding.container.visibility = View.GONE
+
+        if(chdAppBarLayout == null) return
+        chdAppBarLayout.removeView(chdAppBar)
     }
 
     /*
