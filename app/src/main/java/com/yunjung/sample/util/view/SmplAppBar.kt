@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils
 import android.widget.ScrollView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.yunjung.sample.R
 import com.yunjung.sample.databinding.LayoutAppbarBinding
 import com.yunjung.sample.util.extension.getStatusBarHeight
@@ -52,6 +54,8 @@ class SmplAppBar @JvmOverloads constructor(
             duration = 340
         }
     }
+    private val _appBarHeight = MutableLiveData<Int>()
+    val appBarHeight: LiveData<Int> get() = _appBarHeight
 
     init {
         binding.statusBarHeight = context.getStatusBarHeight()
@@ -121,5 +125,10 @@ class SmplAppBar @JvmOverloads constructor(
 
     enum class Type{
         MAIN, CHILD
+    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
+        _appBarHeight.value = this.height
     }
 }

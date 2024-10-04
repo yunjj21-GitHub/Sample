@@ -2,7 +2,11 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <data/>
+    <data>
+        <variable
+            name="appBarHeight"
+            type="Integer" />
+    </data>
     <ScrollView
         android:id="@+id/scrollView"
         android:scrollbars="none"
@@ -28,6 +32,41 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- latestCompanyNewsView -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/latestCompanyNewsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_marginTop="@{appBarHeight}"
+                android:padding="12dp"
+                android:background="@color/shadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/latestCompanyNewsTxt"
+                    style="@style/TXT_CONTENT_WHITE_BOLD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="@string/home_latest_company_news"
+                    app:layout_constraintEnd_toStartOf="@+id/latestCompanyNewsCloseBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/latestCompanyNewsCloseBtn"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/ic_close"
+                    app:layout_constraintBottom_toBottomOf="@+id/latestCompanyNewsTxt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/latestCompanyNewsTxt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

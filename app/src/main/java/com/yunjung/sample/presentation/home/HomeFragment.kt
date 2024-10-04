@@ -1,13 +1,10 @@
 package com.yunjung.sample.presentation.home
 
-import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.yunjung.sample.R
 import com.yunjung.sample.base.BaseFragment
 import com.yunjung.sample.databinding.FragmentHomeBinding
-import com.yunjung.sample.util.SmplLogger
-import com.yunjung.sample.util.view.SmplAppBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -18,15 +15,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
 ) {
     override val viewModel: HomeViewModel by viewModels()
 
-    override fun initView() { }
-
-    override fun initObserver() {
-        super.initObserver()
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun initView() {
         // LoadingView 테스트
         CoroutineScope(Dispatchers.Main).launch {
             viewModel.showAppLoading()
@@ -35,6 +24,18 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
         }
 
         activity.smplAppBar.show(binding.scrollView, binding.layout)
+
+        binding.latestCompanyNewsTxt.isSelected = true
+        binding.latestCompanyNewsCloseBtn.setOnClickListener {
+            binding.latestCompanyNewsContainer.visibility = View.GONE
+        }
+    }
+
+    override fun initObserver() {
+        super.initObserver()
+        activity.smplAppBar.appBarHeight.observe(this){
+            binding.appBarHeight = it
+        }
     }
 
     override fun onDestroy() {
