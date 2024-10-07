@@ -20,17 +20,63 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <!-- AdView -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/adVp"
                 android:layout_width="match_parent"
-                android:layout_height="1800dp"
-                android:background="@color/brownA6"
+                android:layout_height="330dp"
+                tools:background="@color/blue06"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/leftBtn"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/ic_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/adIndicatorTxt"
+                style="@style/TXT_AD_INDICATOR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="01 / 08"
+                app:layout_constraintBottom_toBottomOf="@+id/leftBtn"
+                app:layout_constraintStart_toEndOf="@+id/leftBtn"
+                app:layout_constraintTop_toTopOf="@+id/leftBtn" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/playSwitch"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/switch_play"
+                android:thumb="@null"
+                android:track="@null"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@+id/adIndicatorTxt"
+                app:layout_constraintStart_toEndOf="@+id/adIndicatorTxt"
+                app:layout_constraintTop_toTopOf="@+id/adIndicatorTxt" />
+
+            <Button
+                android:id="@+id/rightBtn"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_right"
+                app:layout_constraintBottom_toBottomOf="@+id/adIndicatorTxt"
+                app:layout_constraintStart_toEndOf="@+id/playSwitch"
+                app:layout_constraintTop_toTopOf="@+id/adIndicatorTxt" />
 
             <!-- latestCompanyNewsView -->
             <androidx.constraintlayout.widget.ConstraintLayout

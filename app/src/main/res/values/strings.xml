@@ -17,5 +17,33 @@
 
     <!-- Home -->
     <string name="home_title">홈</string>
-    <string name="home_latest_company_news">[수주] 디플래닉스 그룹데이터통합 Phase2 과제 보안컨설팅 사업\t\t\t\t\t[수주] 교보라이프플래닛 생성형AI 기반채팅상담세일즈플랫폼구축</string>
+    <string name="home_latest_company_news">
+        [수주] 디플래닉스 그룹데이터통합 Phase2 과제 보안컨설팅 사업\t\t\t
+        [수주] 교보라이프플래닛 생성형AI 기반채팅상담세일즈플랫폼구축\t\t\t
+        [수주]교보생명 영업현장 디지털기기 도입 계약\t\t\t
+        [수주] 전주대학교 모의해킹 서비스\t\t\t
+        [수주]인카금융서비스 GA통합관리시스템 구축\t\t\t
+        [수주] 디플래닉스 그룹데이터통합 Phase2 과제 보안컨설팅 사업\t\t\t
+        [수주] 교보라이프플래닛 생성형AI 기반채팅상담세일즈플랫폼구축\t\t\t
+        [수주]교보생명 영업현장 디지털기기 도입 계약\t\t\t
+        [수주] 전주대학교 모의해킹 서비스\t\t\t
+        [수주]인카금융서비스 GA통합관리시스템 구축\t\t\t
+        [수주] 디플래닉스 그룹데이터통합 Phase2 과제 보안컨설팅 사업\t\t\t
+        [수주] 교보라이프플래닛 생성형AI 기반채팅상담세일즈플랫폼구축\t\t\t
+        [수주]교보생명 영업현장 디지털기기 도입 계약\t\t\t
+        [수주] 전주대학교 모의해킹 서비스\t\t\t
+        [수주]인카금융서비스 GA통합관리시스템 구축
+    </string>
+    <string name="home_ad_summary1">9월 법인카드 마감 안내</string>
+    <string name="home_ad_content1">미입력 건은 급여 공제\n기한 내 꼭! 입력</string>
+    <string name="home_ad_summary2">메일서비스 장애 안내</string>
+    <string name="home_ad_content2">POP3, IMAP 사용 시\n보내기/받기 주기 여유있게 설정</string>
+    <string name="home_ad_summary3">인사발령(이동)</string>
+    <string name="home_ad_content3">손예진 사원\nSW사업운영팀으로 이동</string>
+    <string name="home_ad_summary4">인사발령(이동)</string>
+    <string name="home_ad_content4">한예슬 과장\nSW개발1팀으로 이동</string>
+    <string name="home_ad_summary5">메일서비스 작업 안내</string>
+    <string name="home_ad_content5">9월 26일 10:00PM부터\n9월 27일 01:00AM까지</string>
+    <string name="home_ad_summary6">DC 전환 신청 안내</string>
+    <string name="home_ad_content6">DB 제도에 가입된\n23.09.30 이전 입사자 대상</string>
 </resources>

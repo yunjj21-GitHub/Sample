@@ -18,4 +18,18 @@
     <color name="blue06">#0669BF</color>
     <color name="green48">#48D904</color>
     <color name="brownA6">#A67449</color>
+
+    <!-- Ad -->
+    <color name="ad1_left">#2D232E</color>
+    <color name="ad1_right">#474449</color>
+    <color name="ad2_left">#FCFB62</color>
+    <color name="ad2_right">#91F9E5</color>
+    <color name="ad3_left">#9F7E6A</color>
+    <color name="ad3_right">#D2BA9F</color>
+    <color name="ad4_left">#D7B8F3</color>
+    <color name="ad4_right">#B8B8F3</color>
+    <color name="ad5_left">#5CA9E9</color>
+    <color name="ad5_right">#E4F3E3</color>
+    <color name="ad6_left">#91F1EF</color>
+    <color name="ad6_right">#FFD5E0</color>
 </resources>
