@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topLeftCornerShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="-40dp"
+            android:layout_marginBottom="-40dp"
+            android:background="@drawable/bg_shadow_corner_cv"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/topRightCornerShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-40dp"
+            android:layout_marginBottom="-40dp"
+            android:background="@drawable/bg_shadow_corner_cv"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/btmLeftCornerShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginEnd="-40dp"
+            android:background="@drawable/bg_shadow_corner_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <View
+            android:id="@+id/btmRightCornerShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-40dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/bg_shadow_corner_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <View
+            android:id="@+id/vShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/bg_shadow_verticle_cv"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+        <View
+            android:id="@+id/hShadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_shadow_horizontal_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_rounded_white_cv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
