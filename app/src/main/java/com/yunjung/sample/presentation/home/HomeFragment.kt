@@ -4,7 +4,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.yunjung.sample.R
@@ -41,11 +40,12 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
         // AdView
         viewModel.updateAdList()
         binding.adVp.adapter = AdVpAdapter(activity)
+        binding.adVp.currentItem = getInitialRealPos()
         updateAdIndicator(0)
         playAd(true)
         binding.adVp.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(pos: Int) {
-                updateAdIndicator(pos)
+            override fun onPageSelected(realPos: Int) {
+                updateAdIndicator(shownPos(realPos))
             }
         })
         binding.leftBtn.setOnClickListener { moveAdView(DIR.LEFT) }
@@ -55,20 +55,19 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
 
     enum class DIR { LEFT, RIGHT }
     private fun moveAdView(dir: DIR){
-        val adListSize = viewModel.adList.value!!.size
-        val pos = binding.adVp.currentItem
-        val nextPos = when(dir) {
+        val realPos = binding.adVp.currentItem
+        val nextRealPos = when(dir) {
             DIR.LEFT -> {
-                if(pos - 1 > 0) pos - 1
-                else adListSize - 1
+                if(realPos - 1 > 0) realPos - 1
+                else getInitialRealPos()
             }
             DIR.RIGHT -> {
-                if(pos + 1 < adListSize) pos + 1
-                else 0
+                if(realPos + 1 < MAX_VP_ITEM_NUM) realPos + 1
+                else getInitialRealPos()
             }
         }
-        binding.adVp.currentItem = nextPos
-        updateAdIndicator(nextPos)
+        binding.adVp.currentItem = nextRealPos
+        updateAdIndicator(shownPos(nextRealPos))
     }
 
     private fun playAd(isPlay: Boolean){
@@ -85,7 +84,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
     }
 
     private fun updateAdIndicator(pos: Int){
-        val adListSize = viewModel.adList.value!!.size
+        val adListSize = viewModel.getAdListSize()
         var result = ""
         if(pos < 10) result += "0${pos + 1} / "
         else result += "${pos + 1} / "
@@ -106,11 +105,17 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(
         activity.smplAppBar.hide(binding.layout)
     }
 
+    private val MAX_VP_ITEM_NUM = 1000
     private inner class AdVpAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){
-        override fun getItemCount(): Int = viewModel.adList.value!!.size
+        override fun getItemCount(): Int = MAX_VP_ITEM_NUM
 
-        override fun createFragment(pos: Int): Fragment {
-            return AdPageFragment.newInstance(viewModel.adList.value!![pos])
+        override fun createFragment(realPos: Int): Fragment {
+            val ad = viewModel.adList.value!![shownPos(realPos)]
+            return AdPageFragment.newInstance(ad)
         }
     }
+
+    private fun shownPos(realPos: Int): Int = realPos % viewModel.getAdListSize()
+
+    private fun getInitialRealPos(): Int = ((MAX_VP_ITEM_NUM / 2) / viewModel.getAdListSize()) * (viewModel.getAdListSize())
 }

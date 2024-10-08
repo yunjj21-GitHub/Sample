@@ -20,4 +20,6 @@ class HomeViewModel: BaseViewModel() {
             Advertisement(R.color.ad6_left, R.color.ad6_right, R.drawable.img_ad6, R.string.home_ad_summary6, R.string.home_ad_content6)
         )
     }
+
+    fun getAdListSize(): Int = _adList.value?.size ?: 0
 }
